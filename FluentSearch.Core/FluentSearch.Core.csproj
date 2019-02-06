@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.1</Version>
+    <AssemblyVersion>0.0.0.1</AssemblyVersion>
+    <FileVersion>0.0.0.1</FileVersion>
+    <PackageId>FluentSearch</PackageId>
+    <Authors>Joel Crosby</Authors>
+    <Product>FluentSearch</Product>
+    <Company>Joel Crosby</Company>
+    <Description>A wrapper for Lucene.Net</Description>
+    <PackageTags>FluentSearch, Search, Lucene, Find, Mapper</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lucene.Net" Version="4.8.0-beta00005" />
+    <PackageReference Include="Lucene.Net.Analysis.Common" Version="4.8.0-beta00005" />
+    <PackageReference Include="Lucene.Net.QueryParser" Version="4.8.0-beta00005" />
+  </ItemGroup>
+
+</Project>
