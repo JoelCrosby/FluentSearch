@@ -168,19 +168,19 @@ namespace FluentSearch.Core
             // None Analysed Fields
             foreach (var field in _searchConfig.NonAnalyzedFields)
             {
-                var fieldToAdd = searchItem.GetType().GetProperty(field).GetValue(searchItem, null).ToString();
+                var fieldToAdd = searchItem.GetType().GetProperty(field)?.GetValue(searchItem, null)?.ToString();
 
                 if (!string.IsNullOrWhiteSpace(fieldToAdd))
-                    doc.Add(new StringField(field, fieldToAdd, Field.Store.YES));
+                    doc.Add(new Field(field, fieldToAdd, Field.Store.YES, Field.Index.NOT_ANALYZED));
             }
 
             // Analysed
             foreach (var field in _searchConfig.AnalyzedFields)
             {
-                var fieldToAdd = searchItem.GetType().GetProperty(field).GetValue(searchItem, null).ToString();
+                var fieldToAdd = searchItem.GetType().GetProperty(field)?.GetValue(searchItem, null)?.ToString();
 
                 if (!string.IsNullOrWhiteSpace(fieldToAdd))
-                    doc.Add(new StringField(field, fieldToAdd, Field.Store.YES));
+                    doc.Add(new Field(field, fieldToAdd, Field.Store.YES, Field.Index.ANALYZED));
             }
 
             // add entry to index
