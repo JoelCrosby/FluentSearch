@@ -114,7 +114,7 @@ namespace FluentSearch.Core
                     writer.Dispose();
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 return false;
             }
